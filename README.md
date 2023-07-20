@@ -1,65 +1,63 @@
-## 👋 CS_Study
+# 📖CS Study
 
-### 📕 목적 : 혼자하면 끝까지 가지 못한다!  함께 갈 동료와 CS의 기초 다지기💪
+동료와 함께 성장하는 CS 기초 다지기 🌱
 
-### 📕 구성 : 스터디원 5명 +  멘토 1명
+# 👩🏻 구성원
 
-### 📕 일정 : 매주 수요일 23 ~ 25시 예정 (약 1 ~ 2시간) 
+### Mentor 
 
--  📢 상세 일정 📢 <br>
-  (1) 23.07.16 OT <br>
-  (2) 23.07.26 시작 <br>
-  (3) 23.09.27 종료 <br>
-   ➡️ 약 15회 예상
-- 주말 보충 (월 2 ~ 3회 예정)
+| [🧑🏻‍💻 solo5star]((https://github.com/solo5star) ) |
+| --- |
+| [<img src="https://avatars.githubusercontent.com/u/20203944?v=4" width="80">](https://github.com/solo5star) |
 
-### 📕 진행 방식
+### Member
 
-#### 📘 참여 방법 : 디스코드
+| [👩🏻‍💻 수현](https://github.com/24tngus) | [🧑🏻‍💻 Jingeun Kim]((https://github.com/jindream6128)) | [👩🏻‍💻 Sujin Park](https://github.com/sujin-park0607) | [🧑🏻‍💻 gyeongwan]((https://github.com/gyungwan)) | [👩🏻‍💻 berryberries](https://github.com/berryberries) |
+|:------------------------------------:|:------------------------------------:|:------------------------------------:|:------------------------------------:|:------------------------------------:|
+|[<img src="https://avatars.githubusercontent.com/u/68477988?v=4" width="80">](https://github.com/24tngus)|[<img src="https://avatars.githubusercontent.com/u/101094583?v=4" width="80">](https://github.com/jindream6128)|[<img src="https://avatars.githubusercontent.com/u/75667075?v=4" width="80">](https://github.com/park0607)|[<img src="https://avatars.githubusercontent.com/u/113571059?v=4" width="80">](https://github.com/gyungwan)|[<img src="https://avatars.githubusercontent.com/u/122462263?v=4" width="80">](https://github.com/berryberries)|
 
-- 💡 부득이한 사정 발생시 스터디원들과 조율 가능
-  - 불참할 경우, 최소한 3일전에 스터디원 모두에게 합당한 사유 공유 
-  - 전주 스터디 불참시, 금주 무조건 발표
-- 💡 벌금 규칙
-  - 무단 결석 : 3만원
-  - 지각 : 1만원
-  - 발표 준비 미흡 : 1만원
-  - 카카오모임통장 생성 
+# 📚Contents
 
-#### 📘 스터디 주제 : 면접을 위한 CS 전공지식 노트 📖
+## 📘 Database
 
-- (1) 데이터베이스 4
-- (2) 운영체제 3
-- (3) 네트워크 3
-- (4) 자료구조 2
-➡️ (+ 디자인패턴 / 기타 3)
+| 날짜 | 제목 | 발표자 | 강의 |
+| ----- | ----- | ----- | ---- |
+| 2023.07.25 | 데이터베이스의 기본 | | 1~3 |
+| 2023.07.25 | 트랜잭션, 커밋, 롤백 그리고 전파 ~ 트랜잭션의 격리 수준 | | 7~11 |
+| 2023.07.25 | 관계형데이터베이스 vs NoSQL | | 12 |
+| 2023.07.25 | 데이터베이스의 엔진 | | 13 |
 
-#### 📘 CS 스터디 진행 방식
 
- - 인프런 강의 수강 
- - 참고 서적의 3개의 주제를 전주에 미리 정함
- - 각 주제는 노션에 정리/강의 자료를 통해 설명
- - 스터디날 사다리를 타서 발표자 3명 결정
- - 발표가 끝나고 나면, 스터디 레포지토리에 정리된 자료를 푸시 
-(멘토분이 추가적인 공부방향 제시 및 질문을 comment로 남기는 방식)
+## 📗 Operating-System
 
-#### 📘 (보충) 개발자 기본 지식
+| 날짜 | 제목 | 발표자 | 강의 |
+| ----- | ----- | ----- | ---- |
+| | | |
 
-- 기본적인 CS 지식 이외에도, 스프링 및 리액트 등 면접 및 실무 대비 
-  - (예시) JAVA의 JVM의 동작 과정, Spring 의 MVC 패턴, Servlet 컨테이너의 생명주기 등
-- 1달에 2번 정도로 개인이 선택하여 발표를 진행
 
-#### 📘 진행 목표
+## 📕 Computer-Network
 
- - 기본적인 CS 소향 증진
- - CS Repository 완성
+| 날짜 | 제목 | 발표자 | 강의 |
+| ----- | ----- | ----- | ---- |
+| | | |
 
-### 📕 참고자료
+## 💡Developer-Knowledge
 
-✏️ 인프런 강의 - https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EB%A9%B4%EC%A0%91-cs-%ED%8A%B9%EA%B0%95 <br>
-✏️ 저자 깃허브 - https:lgithub.com/ wnghdcjfelcsnotev <br>
-✏️ 출판사 깃허브 - https://github.com/gilbutITbook/080326 <br>
+| 날짜 | 제목 | 발표자 |
+| ----- | ----- | ----- |
+| 2023.07.25 | | 김진근 |
+| 2023.07.25 | | 이경완|
 
-🔗 참고 깃허브 - https://github.com/ssafy-tech-concert/ssafy-tech-concert <br>
-🔗 참고 깃허브 - https://github.com/SSAFY-SEOUL-19-ALGO/cs-study <br>
-🔗 참고 깃허브 - https://gyoogle.dev/blog/ <br>
+## 📎 Reference
+
+- [<img height="20" src="https://user-images.githubusercontent.com/47595515/198836603-4a8efbb1-3a55-4130-b211-a039cb9cfd8d.png" width="20"/>CS의 정석](https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EB%A9%B4%EC%A0%91-cs-%ED%8A%B9%EA%B0%95/dashboard)
+
+- [SSAFY-CS-Study](https://github.com/SSAFY-SEOUL-19-ALGO/cs-study)
+
+- [👶🏻 신입 개발자 전공 지식 & 기술 면접 백과사전 📖](https://github.com/gyoogle/tech-interview-for-developer)
+
+- [tech interview](https://github.com/WeareSoft/tech-interview)
+
+- [고퀄리티⚡개발 컨텐츠 모음](https://github.com/Integerous/goQuality-dev-contents)
+
+- [Study-Repository-pr방법](url)
