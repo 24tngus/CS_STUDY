@@ -60,4 +60,4 @@
 
 - [고퀄리티⚡개발 컨텐츠 모음](https://github.com/Integerous/goQuality-dev-contents)
 
-- [Study-Repository-pr방법](url)
+- [Study-Repository-pr방법](https://aware-aura-a30.notion.site/74d6ee5f71d443d0804d6b06db6249cc?pvs=4)
