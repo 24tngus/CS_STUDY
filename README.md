@@ -6,7 +6,7 @@
 
 ### Mentor 
 
-| [🧑🏻‍💻 solo5star]((https://github.com/solo5star) ) |
+| [🧑🏻‍💻 solo5star](https://github.com/solo5star)|
 | --- |
 | [<img src="https://avatars.githubusercontent.com/u/20203944?v=4" width="80">](https://github.com/solo5star) |
 
