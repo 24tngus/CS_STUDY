@@ -14,7 +14,7 @@
 
 | [👩🏻‍💻 수현](https://github.com/24tngus) | [🧑🏻‍💻 Jingeun Kim](https://github.com/jindream6128) | [👩🏻‍💻 Sujin Park](https://github.com/sujin-park0607) | [🧑🏻‍💻 mingkyeongg](https://github.com/mingkyeongg) | [👩🏻‍💻 berryberries](https://github.com/berryberries) |
 |:------------------------------------:|:------------------------------------:|:------------------------------------:|:------------------------------------:|:------------------------------------:|
-|[<img src="https://avatars.githubusercontent.com/u/68477988?v=4" width="80">](https://github.com/24tngus)|[<img src="https://avatars.githubusercontent.com/u/101094583?v=4" width="80">](https://github.com/jindream6128)|[<img src="https://avatars.githubusercontent.com/u/75667075?v=4" width="80">](https://github.com/park0607)|[<img src="https://avatars.githubusercontent.com/u/113571059?v=4" width="80">](https://github.com/mingkyeongg)|[<img src="https://avatars.githubusercontent.com/u/122462263?v=4" width="80">](https://github.com/berryberries)|
+|[<img src="https://avatars.githubusercontent.com/u/68477988?v=4" width="80">](https://github.com/24tngus)|[<img src="https://avatars.githubusercontent.com/u/101094583?v=4" width="80">](https://github.com/jindream6128)|[<img src="https://avatars.githubusercontent.com/u/75667075?v=4" width="80">](https://github.com/park0607)|[<img src="https://avatars.githubusercontent.com/u/122078277?v=4" width="80">](https://github.com/mingkyeongg)|[<img src="https://avatars.githubusercontent.com/u/122462263?v=4" width="80">](https://github.com/berryberries)|
 
 # 📚Contents
 
