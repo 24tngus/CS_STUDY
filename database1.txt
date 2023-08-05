@@ -1,0 +1,237 @@
+### 데이터베이스의 기본 
+</br>
+
+### 데이터 베이스란
+
+- 일정한 규칙, 규약을 통해 구조화되어 저장되는 데이터의 모음
+- 데이터베이스를  제어 관리하는  통합 시스템을 DBMS(DataBase Management System) 라고 한다.
+
+### DBMS(DataBase Management System)
+- 데이터베이스를 관리하고 상호 작용하는 데 사용되는 소프트웨어 응용 프로그램입니다. DBMS를 사용하면 최종 사용자나 응용 프로그램 프로그래머가 데이터 저장 방법에 대한 물리적 세부 사항을 알 필요 없이 데이터베이스와 상호 작용할 수 있습니다.
+</br>
+여러 DBMS가 있지만 우리가 많이 다루며 중점적으로 알아야할  관계형 DBMS와 NOSQL 데이터 베이스 입니다. 
+</br>
+
+### RDBMS(관계형 데이터베이스 관리 시스템)
+ - 데이터는 데이터베이스 테이블, 필드 및 레코드로 구조화됩니다. 각 테이블은 레코드 모음이며 테이블의 각 레코드에는 필드 또는 특성이 포함됩니다. MySQL, Oracle Database, MS SQL Server, SQLite 및 PostgreSQL을 예로 들 수 있습니다.
+### NOSQL 데이터베이스 
+- SQL을 사용하지 않고 어떠한 메소드,함수를  이용하여서 데이터를 처리한다. NOSQL 데이터베이스는 대규모 분산 데이터 세트에 유용합니다. 고정된 스키마가 필요하지 않으며 조인 작업을 피합니다. 특히 대규모 분산 데이터 세트 작업에 적합합니다. 예를 들면 MongoDB와 Redis가 있습니다.
+ 
+
+> SQL이란 관계형  데이터베이스에서 사용 되는 데이터베이스를 조작하는 ‘언어’로 알고 있으면 될거 같다. 
+
+</br> 
+
+### **데이터베이스** 용어
+
+![image](https://github.com/24tngus/CS_STUDY/assets/113571059/8b218b93-4886-40f9-bd11-59c5c0a8f408)
+
+
+
+
+#### 엔터티
+엔터티(Entity)를 그대로 번역하면 실제, 독립체라는 뜻으로 데이터 모델링에서 사용되는 객체라고 생각하시면 되겠습니다.
+예를 들어 책이라는 엔터티가 있으면 책은 제목,저자,출판사,가격 등이 있을수 있다.  더 많은 속성이 있을수 있지만 개발하려는 서비스의 요구사항에 맞춰엔터티의 속성이 정해진다. 가격이라는 속성이 서비스에 쓰이지 않으면 가격 속성응 사라지게 된다. 
+
+> 약한 엔터티와 강한엔터티 
+엔터티는 약항 엔터티와 강항 엔터티로 나뉩니다. 예를 들어 A가 혼자서는 존재하지 못하고 B의 존재 여부에 따라 종송적이라면 A는 약한엔터티이고 B는 강한 엔터티가 됩니다. 예를들어 방은 건물 안에만 존대하기 때문에 방은 약한엔터티 이고 건물은 강한 엔터티입니다. 이를 좀더 생각하면 데이터베이스를 설계할때 관계와 관련이 있어 보인다.
+#### 릴레이션
+
+릴레이션(relation)은 데이터베이스에서 정보를 구분하여 저장하는 기본 단위입니다.데이터 베이스는 하나의 릴레이션담아서 보관한다.  
+책이라는 엔터티가 데이터 베이스에서 관리될 때 릴레이션으로  변화한다.  엔터티 -> 릴레이션 
+이 릴레이션 하나에는 제목, 저자,출판사,가격 등이 담겨있다.
+릴레이션은 관계형데이터 베이스 에서는 “테이블”이라고 하며, NoSQL에서는 “컬렉션”이라고 한다.  
+
+> 테이블과 컬렉션의 차이 
+관계형 데이터베이스와 NoSQL데이터베이스인 MySQL과 대표적인 NoSQL인 MondoDB 를 예를 들면
+MySQL의 구조는 레코드 - 테이블 - 데이터베이스로 이루어져 있고
+MongoDB 데이터베이스 구조는 도큐먼트 - 컬렉션 - 데이터베이스로 이루어져있다
+(NoSQL 데이터베이스 중 Redis 데이터베이스는 도큐먼트가 아니라 set, hash 등 여러 개가 있음 )
+레코드가 쌓여서 테이블이 되고 테이블이 쌓여서 데이터베이스가 된다.
+
+#### 속성
+
+속성(attribute) 릴레이션에서 관리하는 구체적이며 고유한 이름을 갖는 정보입니다. 예를들어 “차”라는 엔터티의 속성을 뽑아보면, 차 넘버, 바뀌 수, 차 색깔, 차종 등이 있다. 이 중에서 서비스의 요구사항을 기반으로 관리해야 할 필요가 있는 속성들만 엔터티의 속성이 됩니다.
+
+#### 도메인
+
+도메인(domain)이란 릴레이션에 포함된 각각의 속성들이 가질수 있는 값의 집합을 말합니다. 예를 들어 성별이라는 속성이 있다고 하면 이 성별에는 {남,여}라는 속성만 가질수 있겠죠 이런 집합을 도메인 이라고 합니다. 
+데이터베이스의 도메인은 특정 열에 어떤 종류의 데이터를 저장할 수 있는지를 제한하는 규칙 집합으로, 데이터 무결성을 유지하는 데 도움이 됩니다.
+
+#### 인스턴스
+
+인스턴스는 테이블에서 실제로 저장된 데이터를 말합니다 .
+</br>
+#### 스키마
+
+ 스키마는 관계형 데이터베이스에서 기본 구조를 정의하는 것입니다. 테이블의 첫 행인 헤더를 나타내며, 속성, 자료타입 등의 정보를 담고 있습니다.
+</br>
+### 필드와 레코드  그리고 타입
+회원이란 엔터티는 member라는 테이블로 속성이 이름,아이디 등을 가지고 있으며 name, ID, address등의 필드를 가집니다. 그리고 이 테이블에 쌓이는 행(row,가로) 단위의 데이터를 레코드라고 합니다. 또한 레코드를 튜플이라고도 합니다. 
+
+![image](https://github.com/24tngus/CS_STUDY/assets/113571059/1826e3fe-67fc-4751-a66d-4c33131a3124)
+
+</br>
+
+#### 필드 타입 
+
+필드는 타입을 갖는다 예를 들어 이름은 문자열 전화번호는 숫자열 이런식으로 DBMS마다 타입을 정의 하는 압식이 다르다  MySQL을 기준으로 설명하겠다.
+
+<h2 style="margin: 1.5em 0px 0.5em; line-height: 1.2em; font-size: 24px; font-weight: 700; color: rgb(20, 30, 52); font-family: Pretendard, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">문자형 데이터타입<span> </span><a id="h_b55ee28668aa0e3d45910c3418a8ce14" href="http://www.incodom.kr/DB_-_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%80%EC%9E%85/MYSQL#h_b55ee28668aa0e3d45910c3418a8ce14" class="caret-target" style="color: rgb(20, 30, 52); text-decoration: none; padding: 0px; border-width: 0.125rem 0.125rem 1px; border-bottom-style: solid; border-bottom-color: rgb(160, 178, 218); outline: 0px; transition: color 0.3s ease 0s, background-color 0.3s ease 0s, border-color 0.3s ease 0s; font-size: 1.25rem; font-weight: normal; vertical-align: super; display: inline-block; line-height: 1;">#</a></h2>
+
+  |  
+-- | --
+데이터 유형 | 정의
+CHAR(n) | 고정 길이 데이터 타입(최대 255byte)- 지정된 길이보다 짦은 데이터 입력될 시 나머지 공간 공백으로 채워진다.
+VARCHAR(n) | 가변 길이 데이터 타입(최대 65535byte)- 지정된 길이보다 짦은 데이터 입력될 시 나머지 공간은 채우지 않는다.
+TINYTEXT(n) | 문자열 데이터 타입(최대 255byte)
+TEXT(n) | 문자열 데이터 타입(최대 65535byte)
+MEDIUMTEXT(n) | 문자열 데이터 타입(최대 16777215byte)
+LONGTEXT(n) | 문자열 데이터 타입(최대 4294967295byte)
+JSON | JSON 문자열 데이터 타입 - JSON 형태의 포맷을 꼭 준수해야 한다.
+
+<h2 style="margin: 1.5em 0px 0.5em; line-height: 1.2em; font-size: 24px; font-weight: 700; color: rgb(20, 30, 52); font-family: Pretendard, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">숫자형 데이터 타입<span> </span><a id="h_481d7ea17f52ffb7672ef90a025c3913" href="http://www.incodom.kr/DB_-_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%80%EC%9E%85/MYSQL#h_481d7ea17f52ffb7672ef90a025c3913" class="caret-target" style="color: rgb(20, 30, 52); text-decoration: none; padding: 0px; border-width: 0.125rem 0.125rem 1px; border-bottom-style: solid; border-bottom-color: rgb(160, 178, 218); outline: 0px; transition: color 0.3s ease 0s, background-color 0.3s ease 0s, border-color 0.3s ease 0s; font-size: 1.25rem; font-weight: normal; vertical-align: super; display: inline-block; line-height: 1;">#</a></h2>
+
+  |  
+-- | --
+데이터 유형 | 정의
+TINYINT(n) | 정수형 데이터 타입(1byte) -128 ~ +127 또는 0 ~ 255수 표현할 수 있다.
+SMALLINT(n) | 정수형 데이터 타입(2byte) -32768 ~ 32767 또는 0 ~ 65536수 표현할 수 있다.
+MEDIUMINT(n) | 정수형 데이터 타입(3byte) -8388608 ~ +8388607 또는 0 ~ 16777215수 표현할 수 있다.
+INT(n) | 정수형 데이터 타입(4byte) -2147483648 ~ +2147483647 또는 0 ~ 4294967295수 표현할 수 있다.
+BIGINT(n) | 정수형 데이터 타입(8byte) - 무제한 수 표현할 수 있다.
+FLOAT(길이, 소수) | 부동 소수형 데이터 타입(4byte) -고정 소수점을 사용 형태이다.
+DECIMAL(길이, 소수) | 고정 소수형 데이터 타입고정(길이+1byte) -소수점을 사용 형태이다.
+DOUBLE(길이, 소수) | 부동 소수형 데이터 타입(8byte) -DOUBLE을 문자열로 저장한다.
+
+<h2 style="margin: 1.5em 0px 0.5em; line-height: 1.2em; font-size: 24px; font-weight: 700; color: rgb(20, 30, 52); font-family: Pretendard, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">날짜형 데이터 타입<span> </span><a id="h_732744493db972e54a38219a89782ad6" href="http://www.incodom.kr/DB_-_%EB%8D%B0%EC%9D%B4%ED%84%B0_%ED%83%80%EC%9E%85/MYSQL#h_732744493db972e54a38219a89782ad6" class="caret-target" style="color: rgb(20, 30, 52); text-decoration: none; padding: 0px; border-width: 0.125rem 0.125rem 1px; border-bottom-style: solid; border-bottom-color: rgb(160, 178, 218); outline: 0px; transition: color 0.3s ease 0s, background-color 0.3s ease 0s, border-color 0.3s ease 0s; font-size: 1.25rem; font-weight: normal; vertical-align: super; display: inline-block; line-height: 1;">#</a></h2>
+
+  |  
+-- | --
+데이터 유형 | 정의
+DATE | 날짜(년도, 월, 일) 형태의 기간 표현 데이터 타입(3byte)
+TIME | 시간(시, 분, 초) 형태의 기간 표현 데이터 타입(3byte)
+DATETIME | 날짜와 시간 형태의 기간 표현 데이터 타입(8byte)
+TIMESTAMP | 날짜와 시간 형태의 기간 표현 데이터 타입(4byte) -시스템 변경 시 자동으로 그 날짜와 시간이 저장된다.
+YEAR | 년도 표현 데이터 타입(1byte)
+
+
+#### TEXT 와  BLOB
+
+두 개의 타입 모두 큰 데이터를 저장할때 사용 
+
+TEXT는 큰 문자열 저장에 사용 게시판의 본문 같은 
+
+BLOB은 이미지, 동영상들을 저장할 때 사용 그러나 요즘은 AWS의 S3같은 호이스팅 서비스를 사용한다 링크를 VATCHAR을 저장하는 식으로 이미지를 빠르게 업데이트, 트래픽 과부하 방지하는 업데이트 서비스 
+
+#### ENUM,SET
+
+ENUM과 SET 모두 문자열을 열거한 타입 
+
+ENUM은 단일 선택만 가능하며 리스트에 없는 잘못된 값을 삽입하면 빈 문자열이 대신 삽입
+
+SET는 ENUM과 비슷 하지만 여러개의 데이터를 선택할수 있고 비트 단위의 연산을 할 수 있으며 최대 64개의 요소를 집어넣을 수 있다는 점이 다르다 
+
+ENUM,SET을 사용하면 공간적 이점이 있으나 요즘은 하드웨어가 발달해서 애플리케이션 수정에 따라 데이터베이스의 ENUM,SET에서 정의한 목록을 수정해야하는 단점이 있어 ENUM,SET 사용을 추천하지 않는다.
+
+
+### 데이터 타입 선택 방법 
+
+#### 타입은 작을수록 좋다
+
+일반적으로 데이터를 저장하고 표현하는 데 문제가 없는 데이터 타입 중 가장 작은 것을 골라야 한다. 보통 작은 데이터 타입일수록 디스크나 메모리, CPU 캐시에 더 적은 공간을 사용하기 때문에 더 빠르며 덜 소비한다.
+
+하지만 저장할 값의 크기를 너무 작게 추정하지 않도록 주의해야 한다. 스키마의 이곳저곳에서 데이터 타입의 범위를 늘리는 작업은 어렵고, 시간을 많이 소모하기 때문이다.
+
+#### 타입은 단순한 게 좋다
+
+보통 간단한 데이터 타입을 처리할수록 CPU 사이클로 덜 소비한다. 예로 문자 비교는 문자 셋 (Character set)과 콜레이션 (Collation)으로 인해 복잡해지므로, 문자 비교보다는 정수 비교가 비용이 더 저렴하다. 날짜와 시간은 문자열로 저장하지 말고, MySQL의 내장 형식에 저장해야 하며 IP 주소는 정수를 이용해 저장해야 한다.
+
+IP 주소를 사용할 수 있는 함수로 INET_ATON 함수와 INET_NTOA 함수가 있으니 참고
+
+#### 가능하면 NULL을 쓰지 말자
+
+컬럼은 되도록 NOT NULL (NULL 허용 안 함)로 정의해야 한다. NULL 허용이 기본값이다 보니 사용하는 응용 프로그램이 NULL을 저장할 필요가 없을 때조차 테이블에 NULL을 허용하는 컬럼을 포함한 경우가 많다. NULL을 저장할 의도가 아니라면 컬럼을 NOT NULL로 정의하자.
+
+NULL 허용 컬럼은 저장 공간도 더 많이 사용하며 NULL 허용 컬럼을 인덱싱할 땐 항목마다 한 바이트씩 더 들어간다. 만약 ‘값이 없다’라는 사실을 테이블에 기록해야 하더라도 굳이 NULL을 쓸 필요는 없을지 모른다. NULL 대신 0이나 특수한 어떤 값, 빈 문자열 등을 사용하는 걸 고려해보자.
+
+
+**관계**
+
+데이터베이스에 테이블은 하나만 있는 것이 아닙니다. 여러개의 테이블이 있고 이러한 테이블은 서로의 관계가 정의 되어 있습니다.
+
+![image](https://github.com/24tngus/CS_STUDY/assets/113571059/e00da6d0-cd5d-4165-9927-57d77cffc82b)
+
+
+**1 : 1 관계** 
+
+테이블을 두개의 테이블로 나눠 테이블의 구조를 더이해하기 쉽게 만들어 줍니다
+
+**1 : N 관계**
+
+예를 들어 쇼핑몰을 운영한다고 해보고 한 유저당 여러 개의 상품을 장바구니에 넣을 수 있다. 이러한 경우  1 : N 과계가 됩니다. 물론 하나도 없을수도 있으니 0개의 경우도 포함되는 화살표로 표현한다. 한개체가 다른 많은 개체를 포함하는 관계 
+
+![image](https://github.com/24tngus/CS_STUDY/assets/113571059/10bdfe46-7072-4892-b060-490058322c56)
+
+
+**N : M 관계** 
+
+학생과 강의의 관계를 정의하면 학생도 강의를 많이 듣고 강의도 여러 명의 학생을 포함 할 수 있다. 이 경우 N : M 관계가 된다.
+
+아래 그림을 보면 중간에 학생_강의 테이블이 끼어 있다. N : M 관계는 테이블 두개를 직접벅으로 연결해서 구축하지 않고 1 : N, 1 : M 이라는 관계를 갖는 테이블을 두 개로 나눠서 설정합니다.
+
+![image](https://github.com/24tngus/CS_STUDY/assets/113571059/bb913af2-2753-4ccd-9d1d-a8b4669ba16a)
+
+   
+
+**키**
+테이블 간의 관계를 조금 더 명확하게 하고 테이블 자체의 인덱스를 위해 설정된 장치로 기본키, 외래키,후보키,대체키,슈퍼키가 있습니다. 
+
+키들은 아래 그림 처럼 관계를 가진다. 슈퍼키는 유일성이 있고 그 안에 포함된 후보키는 최소성까지 갖춘 키입니다. 후보키 중에서 기본키로 선택되지 못한 키는 대체키입니다. 유일성은 중복되는 값은 없으며 최소성은 필드를 조합하지 않고 최소 필드만 써서 키를 형성할 수 있는 것을 말한다.   
+
+![image](https://github.com/24tngus/CS_STUDY/assets/113571059/29736711-24b5-4f29-9ae8-3659806d1f12)
+
+
+**기본키** 
+기본키 (primary key)는 줄여 PK 또는 프라이머리키라고 부른다. 유일성과 최소성을 만족하는 키다.
+
+이는 테이블의 데이터 중 고유하게 존재하는 속성이며 기본키에 해당하는 데이터는 아래 그림의 ID처럼  중복되어서는 안된다.
+
+![image](https://github.com/24tngus/CS_STUDY/assets/113571059/4afeb395-e977-4164-9e89-464749fd134b)
+
+아래 그림에서  ID는 기본키로 설정 할 수 있다. { ID, 이름 }이라는 복합키를 기본 키로 설정할 수 있지만 그렇게 되면 최소성을 만족하지 않습니다. 기본키는 자연키 또는 인조키중 골라야합니다.  
+
+![image](https://github.com/24tngus/CS_STUDY/assets/113571059/dda00dbc-2fe2-4c03-885a-eda278d938e6)
+
+
+**자연키**
+
+유저 테이블을 만든다고 가정하면 주민,이름,성별 등의 속성이 있다. 이중 이름,성별등은 중복된 값이 들어올 수 있으므로 부적절하고 남는 것은 주민번호 이다. 이런 식으로 중복 된 값을 제외하고 “자연스레” 뽑다가 나오는 키를 자연키라고 한다 자연키는 언젠가는 변하는 속성을 가지고 있다 
+
+**인조키**
+
+유저 테이블을 만든다고 가정하고 회원 테이블에 주민번호 이름 성별 등의 속성이 있다. 여기에 인위적으로 유저 아이디를 부여한다. 
+
+이를 통해 고유 식별자가 생겨난다. 오라클은  squence, MySQL은 auro increment 등으로 설정한다. 이렇게 인위적으로 생성한 키를 인조키라고 합니다. 자연키와는 대조적으로 변하지 않습니다. 따라서 보통 기본키는 인조키로 설정 합니다.
+
+**외래키**
+
+외래키(Foreign key)는 FK 라고 하며 다른 테이블의 기본키를 그대로 참조하는 값으로 개체와의 관계를 식별하는데 사용한다.
+
+외래키는 중복되어도 괜찮습니다. 아래 그림을 보면 client라는 테이블의 기본키인 ID가 Product라은 테이블의 user_id라는 외래키로 설정되어 있음을 보여준다. 또한 user_id는 a_2라는 값이 중복되는 것을 볼 수 있다. 
+![image](https://github.com/24tngus/CS_STUDY/assets/113571059/775e5068-c5b7-4c3c-b87d-ec3260bc04e7)
+
+
+**후보키**
+
+후보키(candidate key)는 기본키가 될 수 있는 후보들이며 유일성과 최소성을 동시에 만족하는 키다
+
+**대체키**
+
+대체키(alternate key)는 후보키가 두 개 이상일 경우 어느 하나를 기본키로 지정하고 남은 후보키를 말합니다.
+
+**슈퍼키**
+
+슈퍼키(super key)는 각 레코드를 유일하게 식별할 수 있는 유일성을 갖춘 키 입니다.
+
+
