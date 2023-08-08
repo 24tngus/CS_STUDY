@@ -22,10 +22,10 @@
 
 | 날짜 | 제목 | 발표자 | 강의 |
 | ----- | ----- | ----- | ---- |
-| 2023.07.25 | 데이터베이스의 기본 | 이경완 | 1~3 |
+| 2023.07.25 | [데이터베이스의 기본](./Contents/Database/1.%20데이터%20베이스의%20기본.md) | 이경완 | 1~3 |
 | 2023.07.25 | 트랜잭션, 커밋, 롤백 그리고 전파 ~ 트랜잭션의 격리 수준 | 김수현 | 7~11 |
-| 2023.07.25 | 관계형데이터베이스 vs NoSQL | 김진근 | 12 |
-| 2023.07.25 | 데이터베이스의 엔진 | 김진근 | 13 |
+| 2023.07.25 | [관계형데이터베이스 vs NoSQL](./Contents/Database/3.%20데이터베이스의%20종류와%20엔진.md) | 김진근 | 12 |
+| 2023.07.25 | [데이터베이스의 엔진](./Contents/Database/3.%20데이터베이스의%20종류와%20엔진.md) | 김진근 | 13 |
 | 2023.08.02 | 데이터베이스의 인덱스 | 김진근 | 14~17 |
 | 2023.08.02 | 데이터베이스의 여러 조인들 | 박수진 | 18~19 |
 | 2023.08.02 | 데이터베이스의 데드락과 해결방법 | 윤정화 | 20 |
@@ -53,8 +53,8 @@
 
 | 날짜 | 제목 | 발표자 |
 | ----- | ----- | ----- |
-| 2023.07.25 | WebServer vs WebApplicationServer | 김진근 |
-| 2023.07.25 | CI/CD (Continuous Integration/Continuous Delivery) | 이경완 |
+| 2023.07.25 | [WebServer vs WebApplicationServer](./Contents/Knowledge/WebServer%20vs%20WebApplicationServer.md) | 김진근 |
+| 2023.07.25 | [CI/CD (Continuous Integration/Continuous Delivery)](./Contents/Knowledge/CI,CD.md) | 이경완 |
 | 2023.08.02 | 브라우저 동작 과정 | 김수현 |
 | 2023.08.02 | JPA & 영속성 컨텍스트 | 박수진 |
 | 2023.08.08 | Servlet 과 MVC 패턴 | 김수현 |
