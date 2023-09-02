@@ -1,0 +1,890 @@
+<h1>왜 정렬을 해야하는가?</h1>
+<p>&lt;aside&gt;
+💡 탐색을 하기 위해서</p>
+<p>&lt;/aside&gt;</p>
+<ul>
+<li>사람은 수십에서 수 백개의 데이터를 다루는 데 그치지만 컴퓨터가 다뤄야 할 데이터는 보통이 백만개 단위면서 <code>데이터베이스</code> 같은 경우 이론상 무한 개의 데이터를 다룰 수 있어야 한다.</li>
+<li>데이터가 정렬되어 있다면 <code>이진탐색</code> 이라는 강력한 알고리즘 사용 가능</li>
+</ul>
+<h2>이진 탐색</h2>
+<ul>
+<li>일반적으로 <code>정렬된 데이터</code> 는 어떤 값을 임의로 집었을 때 해당 값을 집은 위치의 오른쪽에는 무조건 그것보다 <code>크거나 같은 값</code> 이 있고, 왼쪽에는 <code>작거나 같은 값</code> 이 있다.</li>
+<li>어떤 값을 딱 집었을 때 찾고자 하는 값보다 집어 올린 값이 <code>작다면</code> 그 위치의 왼쪽에는 무조건 그것보다 작거나 같은 값이 있다는 것 ⇒ 볼 필요가 없다</li>
+</ul>
+<p>&lt;aside&gt;
+💡 이진 탐색 알고리즘은 최악의 경우라도 <code>log n</code> 의 성능을 보인다
+ex ) 43억개의 정렬된 자료가 들어있는 데이터에서 최악의 비교 횟수는 <code>32회</code>
+정렬을 수행하는 가장 큰 이유가 <code>이진 탐색</code> 이 가능한 데이터를 만들기 위해서</p>
+<p>&lt;/aside&gt;</p>
+<hr>
+<h1>정렬의 종류</h1>
+<h2>선택 정렬 <strong><strong>(Selection Sort)</strong></strong></h2>
+<p>!<a href="https://velog.velcdn.com/images%2Fcodenmh0822%2Fpost%2Ff2273a9b-3536-46c9-af89-50574c01f094%2F%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.gif">https://velog.velcdn.com/images%2Fcodenmh0822%2Fpost%2Ff2273a9b-3536-46c9-af89-50574c01f094%2F다운로드.gif</a></p>
+<ul>
+<li>요소들 중에서 최솟값을 찾아 맨 앞의 요소와 비교하여 정렬한다. , 비교 횟수는 많으나 교환횟수는 적다</li>
+<li>구현 간편</li>
+</ul>
+<h3>시간 복잡도</h3>
+<ul>
+<li>O(n^2) : 선택 정렬은 매번 최솟값을 찾아야하므로 항상 시간복잡도가 동일하다.</li>
+</ul>
+<h3>가장 적합할 때</h3>
+<ul>
+<li><code>역순 정렬</code> 내림차순으로 정렬되어 있는 자료를 오름차순으로 재정렬 할때</li>
+</ul>
+<h3>최악</h3>
+<ul>
+<li>이미 정렬된 상태에서 소수의 자료가 추가됨으로서 <code>재정렬</code> 하게 될 때</li>
+</ul>
+<h2>버블 정렬 <strong><strong>(Bubble Sort)</strong></strong></h2>
+<p>!<a href="https://blog.kakaocdn.net/dn/KDvbP/btqNYvxNPFB/FI9WG4t28QkPI94X3vKKR0/img.gif">https://blog.kakaocdn.net/dn/KDvbP/btqNYvxNPFB/FI9WG4t28QkPI94X3vKKR0/img.gif</a></p>
+<ul>
+<li>인접한 원소끼리 계속 자리를 교환하면서 맨 끝부터 정렬하는 방식</li>
+<li>구현 간편</li>
+</ul>
+<h3>시간 복잡도</h3>
+<ul>
+<li>최선의 경우 : O(n^2), 이미 정렬이 되어있는 경우</li>
+<li>최악의 경우 : O(n^2): 정렬이 하나도 안되어있는 경우</li>
+</ul>
+<h3>가장 적합할 때</h3>
+<ul>
+<li>메모리가 많이 없을 때 <code>in place</code> 알고리즘이기 때문에 메모리가 절약됨</li>
+<li>이미 정렬된 데이터를 테스트할 때 (<code>O(n)</code> 번만 순회하면 된다)</li>
+</ul>
+<h3>최악</h3>
+<ul>
+<li>자료가 많을 때</li>
+</ul>
+<h2>삽입 정렬 <strong><strong>(Insertion Sort)</strong></strong></h2>
+<p>!<a href="https://blog.kakaocdn.net/dn/ckUS6s/btqNWFulIb6/fpT0jDA7DTDPxc0MV3s0BK/img.gif">https://blog.kakaocdn.net/dn/ckUS6s/btqNWFulIb6/fpT0jDA7DTDPxc0MV3s0BK/img.gif</a></p>
+<ul>
+<li>비교횟수를 효율적으로 줄이기 위해서 고안된 방법, 이미 정렬된 값은 비교하지 않는다는 점이 버블 정렬과의 차이점</li>
+</ul>
+<h3>시간 복잡도</h3>
+<ul>
+<li>최선의 경우 : O(n), 이미 정렬이 되어있는 경우</li>
+<li>최악의 경우 : O(n^2), 정렬이 하나도 안되어있는 경우</li>
+</ul>
+<h3>가장 적합할 때</h3>
+<ul>
+<li>메모리가 많이 없을 때 <code>in place</code> 알고리즘이기 때문에 메모리가 절약됨</li>
+<li>이미 정렬된 데이터를 테스트할 때 (<code>O(n)</code> 번만 순회하면 된다)</li>
+</ul>
+<h3>최악</h3>
+<ul>
+<li>자료가 많을 때</li>
+</ul>
+<h2>힙정렬 (Heap Sort)</h2>
+<p>!<a href="https://blog.kakaocdn.net/dn/bvfjm5/btqNZNrrWGP/mvk5LXkktb7gomRfcIdpyk/img.gif">https://blog.kakaocdn.net/dn/bvfjm5/btqNZNrrWGP/mvk5LXkktb7gomRfcIdpyk/img.gif</a></p>
+<ul>
+<li>완전 이진 트리의 일종으로 우선순위 큐를 위하여 만들어진 자료구조</li>
+<li>최댓값, 최솟값을 쉽게 추출할 수 있다.</li>
+<li>추가적인 메모리를 필요로 하지 않으며 항상 일정한 성능을 발휘한다.</li>
+<li>각종 변수나 하드웨어의 상황을 고려하지 않아도 항상 안정적인 성능을 보여준다.</li>
+</ul>
+<h3>시간 복잡도</h3>
+<ul>
+<li>최선의 경우 : <strong>O(nlog₂n)</strong></li>
+<li>최악의 경우 : <strong>O(nlog₂n)</strong></li>
+</ul>
+<h3>가장 적합할 때</h3>
+<ul>
+<li>일반적인 경우</li>
+</ul>
+<h3>최악</h3>
+<ul>
+<li>
+<p>다른 nlogn 정렬에 비해 낮은 속도.</p>
+</li>
+<li>
+<p>구현</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+// 함수 선언
+void heapify(int arr[], int n, int i);
+void heapSort(int arr[], int n);
+
+// 주요 함수
+int main() {
+    int arr[] = {12, 11, 13, 5, 6, 7};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    std::cout &lt;&lt; &quot;Unsorted array: &quot;;
+    for (int i = 0; i &lt; n; i++) {
+        std::cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    }
+    std::cout &lt;&lt; std::endl;
+
+    heapSort(arr, n);
+
+    std::cout &lt;&lt; &quot;Sorted array: &quot;;
+    for (int i = 0; i &lt; n; i++) {
+        std::cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    }
+    std::cout &lt;&lt; std::endl;
+
+    return 0;
+}
+
+// 힙 생성 (max heap)
+void heapify(int arr[], int n, int i) {
+    int largest = i;    // 부모 노드
+    int left = 2 * i + 1;   // 왼쪽 자식 노드
+    int right = 2 * i + 2;  // 오른쪽 자식 노드
+
+    // 왼쪽 자식이 부모보다 큰 경우
+    if (left &lt; n &amp;&amp; arr[left] &gt; arr[largest]) {
+        largest = left;
+    }
+
+    // 오른쪽 자식이 부모나 왼쪽 자식보다 큰 경우
+    if (right &lt; n &amp;&amp; arr[right] &gt; arr[largest]) {
+        largest = right;
+    }
+
+    // 부모가 최대값이 아니라면 교환하고 heapify를 재귀적으로 호출
+    if (largest != i) {
+        std::swap(arr[i], arr[largest]);
+        heapify(arr, n, largest);
+    }
+}
+
+// 힙 정렬
+void heapSort(int arr[], int n) {
+    // 초기 힙을 구성 (max heap)
+    for (int i = n / 2 - 1; i &gt;= 0; i--) {
+        heapify(arr, n, i);
+    }
+
+    // 힙을 순차적으로 빼내면서 정렬
+    for (int i = n - 1; i &gt; 0; i--) {
+        std::swap(arr[0], arr[i]);
+        heapify(arr, i, 0);
+    }
+}
+</code></pre>
+</li>
+</ul>
+<h2>병합 정렬 <strong><strong>(Merge Sort)</strong></strong></h2>
+<p>!<a href="https://blog.kakaocdn.net/dn/LmIC2/btqNVTGFXgd/lCxYzpvLmmkE6RBkFKaApk/img.gif">https://blog.kakaocdn.net/dn/LmIC2/btqNVTGFXgd/lCxYzpvLmmkE6RBkFKaApk/img.gif</a></p>
+<ul>
+<li>
+<p>데이터들을 잘게 쪼갠 다음에 하나로 합치는 과정에서 정렬하는 방식의 <strong><code>분할 정복 알고리즘</code></strong>.</p>
+</li>
+<li>
+<p>병합 정렬은 최선의 경우와 최악의 경우가 모두 **O(nlog₂n)**의 시간을 가지기 때문에 최악의 경우에 **O(n^2)**의 시간을 가지는 퀵 정렬보다 빠른 정렬이라고 생각하기 쉽다. 그러나 항상 그런 것은 아니다. 그 이유는 퀵 정렬이 병합 정렬보다 **<code>더 작은 상수 시간</code>**을 가지기 때문이다.</p>
+</li>
+<li>
+<p>상수시간</p>
+<p><strong>어떤 문제를 푸는 데 필요한 수학적 연산 시간이, 주어진 입력 자료에 관계없이 항상 일정할 경우의 연산 시간.</strong></p>
+</li>
+</ul>
+<h3>시간 복잡도</h3>
+<ul>
+<li>최선의 경우 : <strong>O(nlog₂n)</strong></li>
+<li>최악의 경우 : <strong>O(nlog₂n)</strong></li>
+</ul>
+<h3>가장 적합할 때</h3>
+<ul>
+<li>어떠한 경우에서도 같은 시간 복잡도를 가지기 때문에 어떤 경우에도 좋은 성능을 보장받을 수 있다.</li>
+</ul>
+<h3>최악</h3>
+<ul>
+<li>별도의 메모리 공간이 필요하기 때문에 정렬할 데이터의 양이 많은 경우에는 그만큼 이동 횟수가 많아지므로 시간적인 낭비도 많아지게 된다.</li>
+</ul>
+<h2>퀵 정렬</h2>
+<p>!<a href="https://velog.velcdn.com/images%2Fhaero_kim%2Fpost%2F02632b28-0489-42f1-9f57-15a8c9f09580%2Fquick-sort-001.gif">https://velog.velcdn.com/images%2Fhaero_kim%2Fpost%2F02632b28-0489-42f1-9f57-15a8c9f09580%2Fquick-sort-001.gif</a></p>
+<ul>
+<li><code>분할 정복 기법을 통해 데이터를 정렬</code></li>
+<li>배열을 pivot의 값을 기준으로 값이 작은 배열과 큰 배열로 정렬</li>
+<li>부분 배열의 크기가 충분히 작다면 그냥 정렬하고, 아니라면 <code>재귀 호출</code>을 통해 다시 이 과정을 <code>반복</code></li>
+<li><code>pivot</code> 을 어떻게 정하냐에 따라 최적화 가능</li>
+</ul>
+<h3>시간 복잡도</h3>
+<ul>
+<li>최선의 경우 : <strong>O(nlog₂n)</strong></li>
+<li>최악의 경우 : <strong>O(n^2)</strong></li>
+</ul>
+<h3>가장 적합할 때</h3>
+<ul>
+<li>일반적인 상황에서 가장 최적의 정렬 가능</li>
+</ul>
+<h3>최악</h3>
+<ul>
+<li>
+<p>첫번째 <code>pivot</code> 값이 가장 크거나 가장 작은 값일때</p>
+</li>
+<li>
+<p>구현</p>
+<pre><code class="language-cpp">#include &lt;stdio.h&gt;
+ 
+int data[10] = {4, 1, 2, 3, 9, 7, 8, 6, 10, 5};
+ 
+void quick_sort(int *data, int start, int end){
+    if(start &gt;= end){
+        // 원소가 1개인 경우
+        return; 
+    }
+    
+    int pivot = end;
+    int i = start; // 왼쪽 출발 지점 
+    int j = pivot - 1; // 오른쪽 출발 지점
+    int temp;
+    
+    while(i &lt;= j)
+		{
+        // 포인터가 엇갈릴때까지 반복
+        while(i &lt;= end &amp;&amp; data[i] &lt;= data[pivot])
+            i++;
+        while(j &gt; start &amp;&amp; data[j] &gt;= data[pivot])
+            j--;
+        
+        if(i &gt; j)
+				{
+            // 엇갈림
+            temp = data[j];
+            data[j] = data[pivot];
+            data[pivot] = temp;
+        }
+				else
+				{
+            // i번째와 j번째를 스왑
+            temp = data[i];
+            data[i] = data[j];
+            data[j] = temp;
+        }
+    } 
+    
+    // 분할 계산
+    quick_sort(data, start, j - 1);
+    quick_sort(data, j + 1, end);
+}
+ 
+int main(void){
+    quick_sort(data, 0, 9);
+
+    for(int i=0; i&lt;10; i++)
+		{
+        printf(&quot;%d &quot;, data[i]);
+    }
+    
+    return 0;
+}
+</code></pre>
+</li>
+</ul>
+<h2>왜 퀵 정렬은 빠를까?</h2>
+<ul>
+<li>시간 복잡도가 O(nlog₂n) 이라는 말은 실제 동작 시간은 <code>C * O(nlog₂n) + a</code> 라는 의미이다. <strong>C라는 상수가 곱해져있어 이 값에 따라 실제 동작 시간에 큰 차이</strong>가 생긴다.</li>
+<li><code>C</code>라는 값은 <code>참조 지역성</code> 원리를 얼마나 잘 만족하는가에 영향을 받는다.</li>
+<li><code>a</code>는 정렬 알고리즘에서 필요한 다른 연산(예: 배열 접근, 값 비교 등)의 시간, 빅 오 표기법에서는 주로 큰 입력값에서 주요 영향을 미치지 않는 경우 무시</li>
+</ul>
+<h3>참조 지역성 원리</h3>
+<ul>
+<li><code>CPU</code> 가 미래에 원하는 데이터를 예측하여 속도가 빠른 장치인 캐시 메모리에 담아 놓는데 이 때의 예측률을 높이기 위하여 사용하는 원리</li>
+<li>최근에 참조한 메모리나 그 메모리와 인접한 메모리를 다시 참조할 확률이 높다는 기반으로 <code>캐시 메모리</code>에 담아놓는 것</li>
+<li><strong>메모리를 연속으로 읽는 작업</strong>은 캐시 메모리에서 읽어오기에 빠른 반면, <strong>무작위로 읽는 작업</strong>은 메인 메모리에서 읽어오기에 속도에 차이가 있다</li>
+</ul>
+<h3>캐시의 지역성?</h3>
+<p><a href="https://stackoverflow.com/questions/9444714/how-is-quicksort-is-related-to-cache">How is quicksort is related to cache?</a></p>
+<ul>
+<li>
+<p>더 보기</p>
+<blockquote>
+<p>알고리즘 관점에서 시간 복잡도는 일반적으로 메모리 액세스 수입니다. 이러한 관점에서 보면 퀵정렬은 평균 O(n log n)은 좋지만 최상의 알고리즘은 아닙니다. 첫째, 최악의 복잡도는 O(n2)이고 최악의 경우 다른 일부가 O(n log n)인 경우 실생활에서 이 경우(일반적으로 역 정렬 또는 상수 입력)를 충족하기 때문입니다.</p>
+<p>퀵 정렬을 좋은 알고리즘으로 만드는 것은 실제 컴퓨터에서 모든 메모리 액세스에 동일한 시간이 걸리지 않는다는 것입니다.</p>
+<p>메인 메모리인 SDRAM은 CPU의 관점에서 볼 때 매우 길어 보이는 대기 시간(일반적으로 수백 CPU 주기)을 가지고 있습니다. 다행스럽게도 메모리의 많은 부분을 요청하여 더 작고 빠른 메모리인 캐시에 넣을 수 있습니다. 이러한 이유로 컴퓨터는 이미 캐시에 있는(또는 여전히) 데이터에 대해 작업할 때 더 빠르게 실행됩니다. 새 메모리 영역을 가져올 때 CPU는 주 메모리가 응답할 때까지 기다려야 하며, 이는 <code>캐시 *미스*</code> 라고 하는 눈에 띄는 성능 저하를 일으킵니다 .</p>
+<p>따라서 큰 배열을 빠르게 정렬하기 위한 중요한 요소는 메모리 액세스 패턴입니다. 이를 위해 퀵 정렬은 정말 좋으며 캐시 미스를 거의 생성하지 않습니다.</p>
+<p>왜 ? 어레이를 순차적으로 스캔하고 더 작은 세그먼트에서 반복하기 때문입니다. 대부분의 메모리 액세스는 캐시에서 발생합니다.</p>
+<p>다른 쪽 끝에 있는 힙 정렬은 검색 트리와 같은 구조를 유지해야 하며 보다 &quot;무작위&quot; 메모리 액세스 패턴을 가집니다.</p>
+<p>캐시에서 매우 효율적인 병합 정렬조차도 제자리에서 작동할 수 없기 때문에 여전히 추가 메모리 액세스가 필요합니다. 재귀적이어야 하기 때문에 임시 데이터를 스택에 보관하거나 연결 목록이 필요합니다(포인터 및 간접 메모리 액세스를 의미함). 캐시 미스).</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h1>안정 정렬과 불안정 정렬</h1>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ca607e5b-88f9-4ae0-958e-14a5a62cde49/Untitled.png" alt="Untitled"></p>
+<h2>안정 정렬</h2>
+<ul>
+<li>중복된 값을 입력 순서와 동일하게 정렬한다.</li>
+</ul>
+<h2>불안정 정렬</h2>
+<ul>
+<li>기존의 정렬 순서를 무시하여 정렬</li>
+</ul>
+
+
+안정 정렬 | 불안정 정렬
+-- | --
+삽입 정렬 | 선택 정렬
+병합 정렬 | 힙 정렬
+버블 정렬 | 퀵 정렬
+카운팅 정렬 |  
+
+
+<ul>
+<li>병합 정렬
+<ul>
+<li><code>O(N)</code> Merge 하는 과정에서 추가적인 메모리 공간이 필요하다.</li>
+</ul>
+</li>
+<li>카운팅 정렬
+<ul>
+<li><code>O(N)</code> 정렬 기법중 선형 시간안에 정렬할 수 있지만, 추가적인 메모리 공간이 필요한 정렬기법이다. 공간을 사용하므로써 시간을 줄이는 기법이다.</li>
+</ul>
+</li>
+<li>Radix 정렬
+<ul>
+<li><code>O(N)</code> Bucket 이라는 공간을 사용한다. 추가적인 메모리 공간이 필요한 정렬 기법이다.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/849cf677-9983-4fea-ade5-dbcb69a72da9/Untitled.png" alt="Untitled"></p>
+<hr>
+<h1>프로그래밍 언어에 들어있는 sort()</h1>
+<h2>c++의 sort</h2>
+<pre><code class="language-cpp">sort(arr, arr+n);
+sort(v.begin(), v.end());
+sort(v.begin(), v.end(), compare);                //사용자 정의 함수 사용
+sort(v.begin(), v.end(), greater&lt;자료형&gt;());    //내림차순 (Descending order)
+sort(v.begin(), v.end(), less&lt;자료형&gt;());        //오름차순 (default = Ascending order)
+</code></pre>
+<h3>intro sort</h3>
+<ul>
+<li>일반적으로 성능 측면에서 다른 모든 정렬 알고리즘을 능가하는 효율적인 In-place 알고리즘, Not stable 하다</li>
+</ul>
+<pre><code class="language-cpp">procedure sort(A : array):
+    let maxdepth = ⌊log(length(A))⌋ × 2 // 최대 재귀 호출의 깊이, 최악의 경우를 대비
+    introsort(A, maxdepth)
+
+procedure introsort(A, maxdepth):
+    n ← length(A) // 배열 A의 길이를 변수에 할당
+    if n ≤ 1:
+        return  // 1 이하인 경우에는 정렬이 필요하지 않으므로 종료  
+else if maxdepth = 0: // 최대 깊이가 0인 경우에는 HeapSort를 사용
+        heapsort(A)
+    else:
+        p ← partition(A)  // 배열을 파티션하고 피벗의 최종위치 'P'를 얻는다. 배열에서 피벗이 정렬된 위치에 놓이는 인덱스
+        introsort(A[0:p-1], maxdepth - 1)
+        introsort(A[p+1:n], maxdepth - 1)
+</code></pre>
+<ol>
+<li>리스트의 크기가 16이하라면 삽입 정렬을 한다.
+<ol>
+<li>16에 특별한 의미가 있는건 아니고 주관적으로 선택된 임계값</li>
+</ol>
+</li>
+<li>전체 리스트에 대해 퀵 정렬을 수행한다.</li>
+<li>수행 도중 재귀 호출의 깊이가 <code>2[logn]</code> 을 넘어가게 되면 4번 항목으로 넘어간다</li>
+<li>쪼개진 부분 리스트의 크기가 16이하 ⇒ 그대로 놔둔다, 16보다 크다면 ⇒ 해당 부분에 힙 정렬을 수행</li>
+<li>3, 4번 항목이 모두 완료된 후, 대부분 정렬이 된 전체 리스트에 대해 삽입 정렬을 수행한다.</li>
+</ol>
+<ul>
+<li>
+<p>최악의 상황에서도 <strong>O(nlog₂n)</strong> 을 보장한다.</p>
+<ul>
+<li>데이터가 적을 시 삽입 정렬이 퀵 정렬보다 빠르다는 것이 증명이 되어있고 퀵정렬을 <code>2[logn]</code> 까지만 수행하기 때문에</li>
+</ul>
+</li>
+<li>
+<p>구현</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+// 삽입 정렬 알고리즘을 구현, 배열의 특정 범위 내에서 삽입 정렬을 수행
+void insertionsort(int a[], int low, int high)
+{
+	// 두번째 값부터 정렬을 실행한다
+	// a[low]의 값은 이미 정렬된 값으로 간주
+	for (int i = low + 1; i &lt;= high; i++)
+	{
+		// 현재 정렬할 요소 a[i]를 임시 변수에 저장
+		int value = a[i];
+		// 정렬 위치를 찾아갈 변수 j를 i로 초기화
+		int j = i;
+
+		// 현재 요소 value를 정렬 위치까지 삽입하기 위해 이동
+		while (j &gt; low &amp;&amp; a[j - 1] &gt; value)
+		{
+			// 정렬 위치까지 이동하면서, 현재 위치 'j'에 이전 위치의 값을 복사, j를 감소시켜 정렬 위치를 계속 찾아감
+			a[j] = a[j - 1];
+			j--;
+		}
+
+		// 반복문이 종료되면 j에 'value'를 삽입하여 정렬을 완료
+		// 부분 배열 내에서 'value가 올바른 위치에 삽입됨
+
+		a[j] = value;
+	}
+}
+
+// 배열 'a'의 주어진 범위 내에서 파티션 수행, low는 시작 인덱스 high는 끝 인덱스
+// 주어진 범위 내에서 피벗을 기준으로 배열을 분할하고, 작은 값은 피벗 왼쪽에, 큰 값은 피벗 오른쪽에 배치함
+int partition(int a[], int low, int high)
+{
+	// 피벗을 선택, 일반적으로 배열의 오른쪽 끝요소를 피벗으로 선택한다.
+	int pivot = a[high];
+
+	// 피벗보다 작은 요소들을 배치하기 위한 인덱스, 초기값으로 'low'를 설정
+	int pIndex = low;
+
+	// 부분 배열의 처음부터 피벗 전까지의 요소들을 반복적으로 검사
+	for (int i = low; i &lt; high; i++)
+	{
+		// a[i]가 피벗보다 작거나 같다면, 이 요소는 피벗의 왼쪽에 배치되어야 한다.
+		if (a[i] &lt;= pivot)
+		{
+			// 작거나 같은 요소를 찾았을 때, 교환하여 작은 요소들을 피벗에 왼쪽에 배치
+			swap(a[i], a[pIndex]);
+			// 다음 작은 요소가 들어갈 위치를 표시
+			pIndex++;
+		}
+	}
+
+	// 피벗을 작은 요소들의 마지막 위치로 옮긴다.
+	swap (a[pIndex], a[high]);
+
+	// 피벗의 최종 위치를 반환
+	return pIndex;
+}
+
+// 배열 a의 주어진 범위 내에서 무작위 파티션을 수행, 배열을 두개의 부분배열로 나눈다.
+// 무작위 피벗 선택은 최악의 경우를 방지하고 효율성을 높이기 위한 방법
+int randPartition(int a[], int low, int high)
+{
+	// 무작위로 선택하기 위해 rand() 함수 이용
+	int pivotIndex = rand() % (high - low + 1) + low;
+
+	// 선택된 무작위 피벗을 배열의 마지막 요소와 교환
+	// 피벗이 항상 배열의 끝에 위치하게 된다.
+	swap(a[pivotIndex], a[high]);
+
+	// 파티션을 수행한다
+	return partition(a, low, high);
+}
+
+// 주어진 요소들을 힙 정렬로 정렬하는 함수
+void heapsort(int *begin, int *end)
+{
+	make_heap(begin, end); // 주어진 범위의 요소들로 최대 힙 생성
+	sort_heap(begin, end); // 최대 힙을 이용하여 정렬을 수행
+}
+
+// 인트로 정렬 함수
+void introsort(int a[], int *begin, int *end, int maxdepth)
+{
+	// 정렬할 부분 배열의 크기가 16보다 작으면 삽입 정렬 수행
+	if ((end - begin) &lt; 16) {
+		insertionsort(a, begin - a, end - a);
+	}
+	// 최대 깊이가 0인경우, 힙 정렬을 수행
+	else if (maxdepth == 0) {
+		heapsort(begin, end + 1);
+	}
+	else {
+		// 위의 조건을 만족하지 않을 경우 퀵 정렬 수행
+		int pivot = randPartition(a, begin - a, end - a);
+		introsort(a, begin, a + pivot - 1, maxdepth - 1);
+		introsort(a, a + pivot + 1, end, maxdepth - 1);
+	}
+}
+
+int main()
+{
+	int a[] = { 5, 7, -8, 9, 10, 4, -7, 0, -12, 1, 6, 2, 3, -4, -15, 12 };
+	int n = sizeof(a) / sizeof(a[0]);
+
+	// 최대 깊이를 가져온다
+	int maxdepth = log(n) * 2;
+
+	introsort(a, a, a + n - 1, maxdepth);
+
+	// 정렬된 배열 출력
+	for (int i = 0; i &lt; n; i++) {
+		cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;
+	}
+
+	return 0;
+}
+</code></pre>
+<h2>궁금증</h2>
+<h3>왜 최대 힙을 사용할까?</h3>
+<p>&lt;aside&gt;
+💡 퀵 정렬과의 조합을 간단하게 유지하면서도 효율적인 정렬을 위해
+최대힙을 사용하는 것이 효율성과 일관성을 보장하는데 도움이 되기 때문</p>
+<p>&lt;/aside&gt;</p>
+<ol>
+<li>최대 힙을 사용하면 배열의 끝에서부터 피벗을 선택할 수 있어 퀵 정렬의 로직을 간단히 유지할 수 있다.</li>
+<li>배열의 가장 큰 값을 빠르게 찾을 수 있도록 해준다.</li>
+<li>최악의 경우를 피하기 위해 (힙 정렬 단계에서 빠르게 최대 힙으로 변환할 수 있다.)</li>
+<li>코드가 더 간단해진다.</li>
+</ol>
+<h3>배열의 맨 끝을 피벗으로 선택하는 이유</h3>
+<ol>
+<li>구현이 단순하다.</li>
+<li>최악의 경우를 줄일 수 있다.
+<ol>
+<li>최악의 경우 : 이미 정렬된 배열에서 피벗을 처음이나 마지막으로 선택할 때 발생</li>
+</ol>
+</li>
+<li>작업 분할의 편의성</li>
+<li>데이터 이동 최소화 : 이웃한 요소와의 교환만으로 피벗을 제 위치에 배치할 수 있다.</li>
+</ol>
+</li>
+</ul>
+<h2>JAVA의 Collections.sort()</h2>
+<pre><code class="language-cpp">/**
+* &lt;p&gt;The implementation was adapted from Tim Peters's list sort for Python
+* (&lt;a href=&quot;&lt;http://svn.python.org/projects/python/trunk/Objects/listsort.txt&gt;&quot;&gt;
+* TimSort&lt;/a&gt;).  It uses techniques from Peter McIlroy's &quot;Optimistic
+* Sorting and Information Theoretic Complexity&quot;, in Proceedings of the
+* Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pp 467-474,
+* January 1993.
+*
+* @param a the array to be sorted
+* @throws ClassCastException if the array contains elements that are not
+*         &lt;i&gt;mutually comparable&lt;/i&gt; (for example, strings and integers)
+* @throws IllegalArgumentException (optional) if the natural
+*         ordering of the array elements is found to violate the
+*         {@link Comparable} contract
+*/
+public static void sort(Object[] a) {
+    if (LegacyMergeSort.userRequested)
+        legacyMergeSort(a);
+    else
+        ComparableTimSort.sort(a, 0, a.length, null, 0, 0);
+}
+</code></pre>
+<ul>
+<li>레거시로 합병 정렬과 <code>Tim 정렬</code> 을 사용하고 있다.</li>
+<li>삽입 정렬과 합병 정렬을 결합하여 만든 정렬</li>
+</ul>
+<h3>Tim 정렬</h3>
+<p>참고 : <a href="https://d2.naver.com/helloworld/0315536">https://d2.naver.com/helloworld/0315536</a></p>
+<p>&lt;aside&gt;
+💡 실제 데이터는 이미 대부분 정렬되어 있을 것이다
+라고 가정하고 실제 데이터에서 고성능을 낼 수 있도록 설계한 알고리즘</p>
+<p>&lt;/aside&gt;</p>
+<ul>
+<li>전체를 작은 덩어리로 잘라 각각의 덩어리를 <code>삽입 정렬</code> 로 정렬한 뒤 병합하면 빠르지 않을까?</li>
+<li>2^x 개씩 잘라 각각을 <code>삽입 정렬</code> 로 정렬하면 일반적인 <code>합병 정렬</code> 보다 덩어리별 x개의 병합 동작이 생략된다.</li>
+<li>파이썬의 기본 정렬 함수인 <code>sort()</code>도 Tim 정렬로 동작, <code>안드로이드</code> <code>구글 크롬</code> <code>스위프트</code> 에서도 활용됨</li>
+</ul>
+<pre><code class="language-cpp">void sort(int[] a, int lo, int hi) {
+ 
+	/**
+	 * 처음 들어온 배열이 일정 크기 이하의 배열이라면 
+	 * binaryInsertionSort로 정렬해버리고 끝내기
+	 * 보통 해당 임계점(THRESHOLD)은 32정도가 됨.
+	 */
+	if(size &lt; THRESHOLD) {
+		BinarySort(a);
+		return;
+	}
+		
+	while(lo &gt;= hi) {
+ 
+		int size = getSubList(a, lo);	// 부분 배열의 길이 구하기 (divide)
+ 
+		// 부분 배열을 이진삽입 정렬로 정렬
+		BinarySort(a, lo, lo + size);
+ 
+		// 병합해야 할 리스트에 push하고 push 된 목록에 있는 부분리스트들을 합친다. (conqure)
+		push(a);
+		merge();
+			
+		lo += size;
+	} 
+ 
+}
+</code></pre>
+<ul>
+<li>
+<p>이진 삽입 정렬</p>
+<ul>
+<li>
+<p>정렬된 부분 배열에 새 요소를 삽입할 위치를 <code>이진 검색</code> 을 통해 찾는다.</p>
+</li>
+<li>
+<p>삽입 정렬에 비해 <code>시간 복잡도</code> 는 낮지만 <code>연산의 복잡도</code>가 올라간다.</p>
+</li>
+<li>
+<p><code>비교 비용</code> 이 비쌀수록 이진 삽입 정렬이 오히려 성능상 이점을 가져오기 때문</p>
+</li>
+<li>
+<p>이진 삽입 코드</p>
+<p>조금 더 자세한 구현 방법은</p>
+<p><a href="https://st-lab.tistory.com/276">https://st-lab.tistory.com/276</a></p>
+<pre><code class="language-cpp">public static void BinaryInsertionSort(int[] a) {
+	if(a.length &lt; 2) {
+		return;
+	}
+	int incLength = getAscending(a, 0, a.length);
+	binaryInsertionSort(a, 0, a.length, incLength);
+}
+ 
+/**
+ * 
+ * @param a 정렬 할 배열
+ * @param lo 정렬 할 배열 구간의 하한선(a[lo] 포함)	
+ * @param hi 정렬 할 배열 구간의 상한선(a[hi] 미포함)
+ * @param start 정렬 할 배열의 원소 탐색 시작점
+ */
+private static void BinaryInsertionSort(int[] a, int lo, int hi ,int start) {
+ 
+	// 만약 start와 lo가 같다면 이분 탐색 시작점은 lo + 1부터이므로 start을 1 증가시킨다.
+	if(lo == start) {
+		start++;
+	}
+	/*
+	 *  start 이전 원소들은 이미 오름차순으로 정렬 된 상태이므로 
+	 *  start부터 시작하여 이분 탐색 및 시프팅을 통해 삽입정렬을 해준다. 
+	 */
+	for (; start &lt; hi; start++) {
+		// 타겟 넘버
+		int target = a[start];
+		int loc = binarySearch(a, target, lo, start);
+ 
+		int j = start - 1;
+ 
+		// 타겟이 들어갈 위치보다 큰 원소들을 뒤로 미룬다.
+		while (j &gt;= loc) {
+			a[j + 1] = a[j]; // 이전 원소를 한 칸씩 뒤로 미룬다.
+			j--;
+		}
+ 
+		/*
+		 * 위 반복문에서 탈출 하는 경우 앞의 원소가 타겟보다 작다는 의미이므로 
+		 * 타겟 원소는 j번째 원소 뒤에 와야한다. 그러므로 타겟은 j + 1 에 위치하게 된다.
+		 */
+		a[loc] = target;
+	}
+}
+ 
+// 이분 탐색
+private static int binarySearch(int[] a, int key, int lo, int hi) {
+ 
+	int mid;
+	while (lo &lt; hi) {
+		mid = lo + ((hi - lo) / 2);
+		// 안장 정렬을 위해 key가 a[mid]보다 작을 때만 상한선을 옮긴다.
+		if (key &lt; a[mid]) {
+			hi = mid;
+		} 
+		else {
+			lo = mid + 1;
+		}
+	}
+	return lo;
+}
+ 
+// lo 부터 몇 개의 원소가 오름차순 혹은 내림차순인지를 반환하는 메소드
+private static int getAscending(int[] a, int lo, int hi) {	
+ 
+	int limit = lo + 1;
+	if (limit == hi) { // lo + 1 == hi 라는 것은 결국 정렬 할 원소가 a[lo] 1개 뿐이라는 의미다.
+		return 1;
+	}
+ 
+	// 오름차순 일 경우 (안정 정렬을 위해 같은 경우까지 포함)
+	if (a[lo] &lt;= a[limit]) {
+		// 오름차순일 때까지 반복한다. (limit이 hi 범위를 벗어나면 안된다.)
+		while (limit &lt; hi &amp;&amp; a[limit - 1] &lt;= a[limit]) {
+			limit++;
+			}
+		}
+	// 내림차순 일 경우
+	else {
+		while (limit &lt; hi &amp;&amp; a[limit - 1] &gt; a[limit]) {
+			limit++;
+		}
+		reversing(a, lo, limit);	// 내림차순의 경우엔 오름차순으로 변경해주어야 함
+	}
+ 
+	return limit - lo;
+}
+	
+// 원소를 뒤집어준다.
+private static void reversing(int[] a, int lo, int hi) {
+	// a[lo] &lt;= a[i] &lt; a[hi] 범위이므로 마지막 인덱스는 hi - 1부터 시작된다.
+	hi--;
+	while (lo &lt; hi) {
+		int temp = a[lo];
+		a[lo] = a[hi];
+		a[hi] = temp;
+		lo++;
+		hi--;
+	}
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>간단한 구현 해보기</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+const int MIN_MERGE = 32;
+
+int calcMinRun(int n) { // 배열 크기에 따라 적절한 minRun값을 계산
+    int r = 0;
+    while (n &gt;= MIN_MERGE) {
+        r |= n &amp; 1;
+        n &gt;&gt;= 1;
+    }
+    return n + r;
+}
+
+// 삽입 정렬 수행
+void insertionSort(std::vector&lt;int&gt;&amp; arr, int left, int right) {
+    for (int i = left + 1; i &lt;= right; ++i) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j &gt;= left &amp;&amp; arr[j] &gt; key) {
+            arr[j + 1] = arr[j];
+            --j;
+        }
+        arr[j + 1] = key;
+    }
+}
+
+// 병합과정의 합병 과정
+void merge(std::vector&lt;int&gt;&amp; arr, int l, int m, int r) {
+    int len1 = m - l + 1, len2 = r - m;
+    std::vector&lt;int&gt; left(len1), right(len2);
+
+    for (int i = 0; i &lt; len1; ++i)
+        left[i] = arr[l + i];
+    for (int i = 0; i &lt; len2; ++i)
+        right[i] = arr[m + 1 + i];
+
+    int i = 0, j = 0, k = l;
+
+    while (i &lt; len1 &amp;&amp; j &lt; len2) {
+        if (left[i] &lt;= right[j]) {
+            arr[k] = left[i];
+            ++i;
+        } else {
+            arr[k] = right[j];
+            ++j;
+        }
+        ++k;
+    }
+
+    while (i &lt; len1) {
+        arr[k] = left[i];
+        ++i;
+        ++k;
+    }
+
+    while (j &lt; len2) {
+        arr[k] = right[j];
+        ++j;
+        ++k;
+    }
+}
+
+// 알고리즘 구현
+// 적절한 크기의 부분 배열을 삽입 정렬로 정렬
+void timSort(std::vector&lt;int&gt;&amp; arr) {
+    int n = arr.size();
+    int minRun = calcMinRun(n);
+
+    for (int i = 0; i &lt; n; i += minRun) {
+        insertionSort(arr, i, std::min(i + minRun - 1, n - 1));
+    }
+
+    for (int size = minRun; size &lt; n; size *= 2) {
+        for (int left = 0; left &lt; n; left += 2 * size) {
+            int mid = left + size - 1;
+            int right = std::min(left + 2 * size - 1, n - 1);
+            merge(arr, left, mid, right);
+        }
+    }
+}
+
+int main() {
+    std::vector&lt;int&gt; arr = {5, 7, -8, 9, 10, 4, -7, 0, -12, 1, 6, 2, 3, -4, -15, 12};
+    int n = arr.size();
+
+    timSort(arr);
+
+    for (int i = 0; i &lt; n; ++i) {
+        std::cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    }
+
+    return 0;
+}
+</code></pre>
+<ul>
+<li>실제로는 더 많은 최적화와 예외 처리가 필요하다.</li>
+</ul>
+</li>
+</ul>
+<h1>Tim vs Intro 어느게 더 빠를까</h1>
+<p>&lt;aside&gt;
+💡 일반적으로 팀 소트가 더 빠르다</p>
+<p>&lt;/aside&gt;</p>
+<ol>
+<li>팀 소트는 이미 정렬된 데이터나 거의 정렬된 데이터에서도 효율적으로 동작한다. 최선 및 평균 경우에도 <code>O(n)</code> 의 선형 시간 복잡도를 보장</li>
+<li>안정 정렬이므로 동일한 값의 상대적인 순서를 보존</li>
+<li>실제 세계의 데이터에 잘 적응하는 알고리즘</li>
+</ol>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f9459130-4d91-4177-b2d7-d4936b204332/Untitled.png" alt="Untitled"></p>
+<p>랜덤</p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f23b0dd6-7891-4f84-a3a7-fc831ea6e701/Untitled.png" alt="Untitled"></p>
+<p>내림차순 정렬</p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/88728f0d-dcd5-4b9c-85ce-a8233ca2f469/Untitled.png" alt="Untitled"></p>
+<p>부분 정렬</p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6152ec74-83e5-49a9-a6fd-fb62b33e08e4/Untitled.png" alt="Untitled"></p>
+<p>오름차순 정렬</p>
+<p>더 자세한 실험 결과 <a href="https://choiseokwon.tistory.com/220">https://choiseokwon.tistory.com/220</a></p>
+<hr>
+<h1>가장 효율적이지 않은 정렬</h1>
+<h2>꼭두각시 정렬</h2>
+<p>!<a href="https://upload.wikimedia.org/wikipedia/commons/f/f8/Sorting_stoogesort_anim.gif">https://upload.wikimedia.org/wikipedia/commons/f/f8/Sorting_stoogesort_anim.gif</a></p>
+<ul>
+<li>재귀 정렬 알고리즘</li>
+<li>시작 값이 끝의 값보다 더 크면 이 둘의 위치를 서로 바꾼다.</li>
+<li>목록 안에 3개 이상의 요소가 있다면
+<ul>
+<li>목록의 처음 2/3을 꼭두각시 정렬</li>
+<li>목록의 마지막 2/3을 꼭두각시 정렬</li>
+<li>목록의 처음 2/3을 또다시 꼭두각시 정렬</li>
+</ul>
+</li>
+</ul>
+<h3>시간 복잡도</h3>
+<p>O(<em>n</em>log 3/log 1.5) = O(<em>n</em>2.7095...)</p>
+<ul>
+<li>
+<p>구현</p>
+<pre><code class="language-cpp">function stoogesort(array L, i = 0, j = length(L)-1){
+     if L[i] &gt; L[j] then       // If the leftmost element is larger than the rightmost element
+         L[i] ↔ L[j]           // Swap the leftmost element and the rightmost element
+     if (j - i + 1) &gt; 2 then       // If there are at least 3 elements in the array
+         t = floor((j - i + 1) / 3) // Rounding down
+         stoogesort(L, i  , j-t)  // Sort the first 2/3 of the array
+         stoogesort(L, i+t, j)    // Sort the last 2/3 of the array
+         stoogesort(L, i  , j-t)  // Sort the first 2/3 of the array again
+     return L
+ }
+</code></pre>
+</li>
+</ul>
+<h2>보고 정렬</h2>
+<p>!<a href="https://upload.wikimedia.org/wikipedia/commons/7/7b/Bogo_sort_animation.gif">https://upload.wikimedia.org/wikipedia/commons/7/7b/Bogo_sort_animation.gif</a></p>
+<ul>
+<li>운에 맡기는 정렬</li>
+<li>리스트를 섞고 배열될 때까지 실행한다.</li>
+</ul>
+<h3>시간 복잡도</h3>
+<p><em>O</em>((<em>n</em>+1)!)</p>
+<ul>
+<li>구현</li>
+</ul>
